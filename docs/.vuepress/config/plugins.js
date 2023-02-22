@@ -1,3 +1,10 @@
+const autometa_options = {
+  site: {
+    name: 'YiMo',
+  },
+  canonical_base: 'http://xyhwh-nav.cn',
+};
+
 // 插件配置
 module.exports = [
   // 本地插件
@@ -8,36 +15,41 @@ module.exports = [
 
   'vuepress-plugin-baidu-autopush', // 百度自动推送
 
+  // 鼠标点击后散开小星星
+  'cursor-effects',
+
+  ['fulltext-search'], // 全文搜索
+
   // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
-  [
-    'thirdparty-search',
-    {
-      thirdparty: [
-        // 可选，默认 []
-        {
-          title: '在MDN中搜索',
-          frontUrl: 'https://developer.mozilla.org/zh-CN/search?q=', // 搜索链接的前面部分
-          behindUrl: '', // 搜索链接的后面部分，可选，默认 ''
-        },
-        {
-          title: '在Runoob中搜索',
-          frontUrl: 'https://www.runoob.com/?s=',
-        },
-        {
-          title: '在Vue API中搜索',
-          frontUrl: 'https://cn.vuejs.org/v2/api/#',
-        },
-        {
-          title: '在Bing中搜索',
-          frontUrl: 'https://cn.bing.com/search?q=',
-        },
-        {
-          title: '通过百度搜索本站的',
-          frontUrl: 'https://www.baidu.com/s?wd=site%3Axugaoyi.com%20',
-        },
-      ],
-    },
-  ],
+  // [
+  //   'thirdparty-search',
+  //   {
+  //     thirdparty: [
+  //       // 可选，默认 []
+  //       {
+  //         title: '在MDN中搜索',
+  //         frontUrl: 'https://developer.mozilla.org/zh-CN/search?q=', // 搜索链接的前面部分
+  //         behindUrl: '', // 搜索链接的后面部分，可选，默认 ''
+  //       },
+  //       {
+  //         title: '在Runoob中搜索',
+  //         frontUrl: 'https://www.runoob.com/?s=',
+  //       },
+  //       {
+  //         title: '在Vue API中搜索',
+  //         frontUrl: 'https://cn.vuejs.org/v2/api/#',
+  //       },
+  //       {
+  //         title: '在Bing中搜索',
+  //         frontUrl: 'https://cn.bing.com/search?q=',
+  //       },
+  //       {
+  //         title: '通过百度搜索本站的',
+  //         frontUrl: 'https://www.baidu.com/s?wd=site%3Axugaoyi.com%20',
+  //       },
+  //     ],
+  //   },
+  // ],
    // 阅读顶部进度条
   'reading-progress',
   
@@ -49,16 +61,35 @@ module.exports = [
     }
   ],
 
+  // 动态标题，官网：https://moefyit.github.io/moefy-vuepress/packages/dynamic-title.html
+  [
+    "dynamic-title",
+    {
+      showIcon:
+        "/img/favicon.ico",
+      showText: "ヾ(≧▽≦*)o亲，欢迎您访问！",
+      hideIcon:
+        "/img/favicon.ico",
+      hideText: "ಥ_ಥ啊，你不要走呀！",
+      recoverTime: 2000, //  持续时间
+    },
+  ],
+
+  // meta优化 https://github.com/webmasterish/vuepress-plugin-autometa
+  [ 'autometa', autometa_options ],
+
+  // 代码块复制按钮
   [
     'one-click-copy',
     {
       // 代码块复制按钮
       copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
-      copyMessage: '复制成功', // default is 'Copy successfully and then paste it for use.'
+      copyMessage: '复制成功 🎉', // default is 'Copy successfully and then paste it for use.'
       duration: 1000, // prompt message display time.
       showInMobile: false, // whether to display on the mobile side, default: false.
     },
   ],
+
   [
     'demo-block',
     {
@@ -88,25 +119,19 @@ module.exports = [
       hm: '503f098e7e5b3a5b5d8c5fc2938af002',
     },
   ],
+
   [
-    'vuepress-plugin-comment', // 评论
-    {
-      choosen: 'gitalk',
-      options: {
-        clientID: 'a6e1355287947096b88b',
-        clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
-        repo: 'blog-gitalk-comment', // GitHub 仓库
-        owner: 'xugaoyi', // GitHub仓库所有者
-        admin: ['xugaoyi'], // 对仓库有写权限的人
-        // distractionFreeMode: true,
-        pagerDirection: 'last', // 'first'正序 | 'last'倒序
-        id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
-        title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
-        labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
-        body:
-          '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
-      },
-    },
+    'vuepress-plugin-vdoing-comment', // 评论
+      {
+        choosen: 'artalk',
+        options: {
+            server: 'https://comment.eryajf.net',
+            site: '二丫讲梵',
+            disableEmotion: false,
+            disablePreview: false,
+            disablePicture: true
+        }
+      }
   ],
   [
     '@vuepress/last-updated', // "上次更新"时间格式
