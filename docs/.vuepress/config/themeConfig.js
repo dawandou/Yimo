@@ -101,5 +101,5 @@ module.exports = {
     copyrightInfo:
       '<b>YiMO.一茉</b> | <a href = "https://beian.miit.gov.cn/#/Integrated/index">苏ICP备2022035828</a> | <a href="https://github.com/dawandou/personal_blog_vue/blob/master/LICENSE" target="_blank">MIT License</a> | 一茉 All rights reserved.', // 博客版权信息，支持a标签
   },
-  //htmlModules // 插入hmtl(广告)模块
+  htmlModules // 插入hmtl(广告)模块
 }

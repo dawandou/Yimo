@@ -20,16 +20,19 @@
 
 module.exports = {
   homeSidebarB:
-    `<!-- 纵向自适应 -->
-    <ins class="adsbygoogle"
-        style="display:block;padding: 0.95rem;"
-        data-ad-client="ca-pub-7828333725993554"
-        data-ad-slot="7802654582"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>`,
+    `<div style="padding: 0.95rem">
+    <p style="
+        color: var(--textColor);
+        opacity: 0.9;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0 0 8px 0;
+    ">公众号</p>
+    <img src="https://pic.zhaotu.me/2023/02/22/gzh997800fefab2d052.png"  style="width:100%;" />
+    <p>
+    码上言，扫码或者搜索关注
+    </p>
+    </div>`,
   // sidebarT:
   //   `<!--  固定100% * 150px可显示，max-height:150px 未见显示-->
   //   <ins class="adsbygoogle"
