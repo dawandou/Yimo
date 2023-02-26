@@ -125,11 +125,11 @@ module.exports = [
       {
         choosen: 'artalk',
         options: {
-            server: 'https://comment.eryajf.net',
-            site: '二丫讲梵',
-            disableEmotion: false,
-            disablePreview: false,
-            disablePicture: true
+            server: 'http://120.48.80.139:8081',
+            site: 'YiMo.一茉',
+            //disableEmotion: false,
+           // disablePreview: false,
+           // disablePicture: true
         }
       }
   ],
