@@ -127,9 +127,9 @@ module.exports = [
         options: {
             server: 'http://120.48.80.139:8081',
             site: 'YiMo.一茉',
-            //disableEmotion: false,
-           // disablePreview: false,
-           // disablePicture: true
+            disableEmotion: false,
+            disablePreview: false,
+            disablePicture: true
         }
       }
   ],
