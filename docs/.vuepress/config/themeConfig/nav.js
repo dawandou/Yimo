@@ -62,6 +62,19 @@ module.exports = [
       { text: 'Gitlab', link: '/gitlab/'},
       { text: 'Kafka', link: '/kafka/'},
       { text: 'Linux', link: '/linux/'},
+      { text: 'Linux环境搭建',
+      items: [
+          { text: '导航', link: '/pages/141184/' },
+          { text: '安装JDK', link: '/pages/d9b62a/' },
+          { text: '安装MySQL', link: '/pages/fc321e/' },
+          { text: '安装Nginx', link: '/pages/d0fa1a/' },
+          { text: '安装Tomcat', link: '/pages/37c698/' },
+          { text: '部署SpringBoot项目', link: '/pages/648563/' },
+          { text: '安装node.js', link: '/pages/3fbd8a/' },
+          { text: '部署Vue项目', link: '/pages/b0935d/' },
+          { text: '安装Redis', link: '/pages/30f1d2/' }, 
+        ],
+      }
     ]
   },  
   {
@@ -73,7 +86,7 @@ module.exports = [
     ]
   },
   {
-    text: '更多', link: '/more/',
+    text: '更多', 
     items: [
       { text: '友链', link: '/friends/'},
       { text: '学习分享', link: '/studyshare/'},
